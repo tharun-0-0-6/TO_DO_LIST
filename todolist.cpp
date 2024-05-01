@@ -13,13 +13,13 @@ class task
 		}
 		void crtask()
 		{
-			cout<<"\nEnter the no.of tasks to include : ";
+			cout<<"\nEnter the number of tasks to include : ";
 			cin>>nott;
 			cin.ignore();
 			for(int i=0;i<nott;i++)
 			{
 				cout<<"Enter the task "<<i+1<<" : ";
-				gets(tasks[i]);
+				scanf(" %s",tasks[i]);
 				strcpy(status[i],"Pending");
 				a++;
 			}
@@ -47,13 +47,14 @@ class task
 				{
 					cout<<i+1<<". "<<tasks[i]<<endl;
 				}
-				cout<<"Enter the task to be deleted : ";
+				cout<<"Enter the task to be deleted (in number): ";
 				cin>>delrow;
 				for(int i=delrow-1;i<a;i++)
 				{
 					strcpy(tasks[i],tasks[i+1]);
 				}
-				for(int i=0;i<a-1;i++)
+				a=a-1;
+				for(int i=0;i<a;i++)
 				{
 					cout<<i+1<<". "<<tasks[i]<<endl;
 				}
@@ -69,7 +70,7 @@ class task
 			{
 				cout<<i+1<<". "<<tasks[i]<<" - "<<status[i]<<endl;
 			}
-			cout<<"\nEnter the task that is completed : ";
+			cout<<"\nEnter the task that is completed (in number): ";
 			cin>>compt;	
 			cout<<endl;
 			strcpy(status[compt-1],"Completed");
@@ -82,8 +83,8 @@ class task
 int main()
 {
 	task t;
-	int task;
-	cout<<"-------- To Do List --------\n1. Enter a task\n2. View a task\n3. Delete a task\n4. Mark a task a completed\n5. Exit";
+	int n,task;
+	cout<<"-------- To Do List --------\n1. Add tasks\n2. View tasks\n3. Delete a task\n4. Mark a task as completed\n5. Exit";
 	do
 	{
 		cout<<"\n----------------------------\nEnter the work to be done : ";
@@ -110,6 +111,14 @@ int main()
 				t.markcomp();
 				break;
 			}	 
+			case 5:
+			{
+				n=20;
+			}
+		}
+		if(n==20)
+		{
+			break;	
 		}	
 	}while((task>=1)&&(task<=5));
 	return 0;
