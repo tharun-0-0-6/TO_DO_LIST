@@ -1,1 +1,1 @@
-# TO_DO_LIST
+Welcome to the C++ To-Do List Application. This software facilitates task input, display, addition,deletion and status marking for users, ensuring a comprehensive task management experience. By incorporating simple class and object implementations, this application prioritizes code maintenance and scalability.
