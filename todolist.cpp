@@ -19,7 +19,7 @@ class task
 			for(int i=0;i<nott;i++)
 			{
 				cout<<"Enter the task "<<i+1<<" : ";
-				scanf(" %s",tasks[i]);
+				gets(tasks[i]);
 				strcpy(status[i],"Pending");
 				a++;
 			}
